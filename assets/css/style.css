@@ -1,1 +1,73 @@
-/* fill */
+/* Custom styles for the header */
+.bg-orange {
+    background-color: #ff5a22;
+}
+
+.navbar-brand img.logo {
+    width: 100px; /* Ajuste la taille du logo selon tes besoins */
+}
+
+.search-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-form input {
+    border-radius: 20px;
+}
+
+.search-form button {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Panier icon */
+.nav-item .fa-shopping-cart {
+    font-size: 1.5em;
+    color: white;
+}
+
+.nav-item .fa-shopping-cart:hover {
+    color: #ffc107;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        max-height: 250px; /* Limite la hauteur du menu */
+        overflow-y: auto;  /* Active le scroll si le menu dépasse */
+    }
+    
+    .navbar-toggler {
+        border-color: white;
+    }
+
+    /* Collapse button icon style */
+    .navbar-toggler-icon {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png");
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        color: white;
+        text-align: center;
+    }
+
+    .search-form {
+        margin: 10px 0; /* Ajustement de la position de la barre de recherche sur mobile */
+    }
+}
+
+                                        /* fin de la section header  */
