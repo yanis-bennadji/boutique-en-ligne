@@ -1,1 +1,164 @@
-/* fill */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-bar {
+    margin-left: auto;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.cart-icon img {
+    width: 30px;
+    margin-left: 20px;
+}
+
+main {
+    text-align: center;
+    margin: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.card {
+    background-color: #6cd6a4;
+    padding: 20px;
+    border-radius: 20px;
+    height: 400px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card img:hover {
+    transform: scale(1.1); /* Augmente l'image de 10% au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Augmente l'ombre pour un effet plus marqué */
+  }
+  
+
+.card-image {
+    width: 50%;
+    height: 150px; /* Taille de l'image */
+    object-fit: cover; /* Pour que l'image s'adapte bien */
+    border-radius: 10px; /* Arrondir les bords de l'image */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-image:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre subtile */
+  }
+
+.card-image-book {
+    width: 150px;
+    height: 225px; /* Taille de l'image */
+    object-fit: cover; /* Pour que l'image s'adapte bien */
+    border-radius: 10px; /* Arrondir les bords de l'image */
+    margin-bottom: 15px;
+}
+
+.card-image-dvd {
+    width: 200px;
+    height: 250px; /* Taille de l'image */
+    object-fit: cover; /* Pour que l'image s'adapte bien */
+    border-radius: 10px; /* Arrondir les bords de l'image */
+    margin-bottom: 15px;
+}
+
+.card-image-figure {
+    width: 250px;
+    height: 250px; /* Taille de l'image */
+    object-fit: cover; /* Pour que l'image s'adapte bien */
+    border-radius: 10px; /* Arrondir les bords de l'image */
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card .price {
+    font-size: 16px;
+    color: #ff0000;
+    margin: 10px 0;
+}
+
+.buy-button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #ff69b4;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Légère animation au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Plus d'ombre au survol */
+}
+
+.more-articles {
+    display: block;
+    margin-top: 50px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+.more-articles:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
