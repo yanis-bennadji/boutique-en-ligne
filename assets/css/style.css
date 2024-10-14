@@ -1,6 +1,6 @@
 /* Custom styles for the header */
 .bg-orange {
-    background-color: #ff5a22;
+    background-color: #ff5922d7;
 }
 
 .navbar-brand img.logo {
@@ -17,21 +17,21 @@
 }
 
 .search-form button {
-    background-color: transparent;
+    background-color:rgb(#000000);
     border: none;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 .navbar-collapse {
     flex-grow: 0;
 }
 
 .navbar-nav .nav-item .nav-link {
-    color: white;
+    color: rgb(255, 255, 255);
     margin-right: 15px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #ffc107;
+    color: #000000;
 }
 
 /* Panier icon */
@@ -71,3 +71,68 @@
 }
 
                                         /* fin de la section header  */
+
+                                        /* début sectiion footer  */
+
+.footer {
+  background-color: #FF7345; /* Orange background */
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
