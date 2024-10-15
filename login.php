@@ -7,10 +7,9 @@
 </head>
 <body>
 
-    <h1>Se connecter</h1>
+    <h1>Connexion</h1>
     
-    <form action="POST">
-
+    <form action="process_login.php" method="post">
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
         

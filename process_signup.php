@@ -1,17 +1,19 @@
 <?php
-
-include './includes/functions.php';
+include 'includes/functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = htmlspecialchars($_POST['nom'] ?? '', ENT_QUOTES);
-    $prenom = htmlspecialchars($_POST['prenom'] ?? '', ENT_QUOTES);
-    $adresse = htmlspecialchars($_POST['adresse'] ?? '', ENT_QUOTES);
+    // Récupérer et sécuriser les données du formulaire
+    $first_name = htmlspecialchars($_POST['first_name'] ?? '', ENT_QUOTES);
+    $last_name = htmlspecialchars($_POST['last_name'] ?? '', ENT_QUOTES);
+    $address = htmlspecialchars($_POST['address'] ?? '', ENT_QUOTES);
     $email = htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES);
-    $password = $_POST['password']; // Le mot de passe n'a pas besoin d'être htmlspecialchars car il est stocké en tant que hash dans la base de données
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hachage du mot de passe
 
-    signup($nom, $prenom, $adresse, $email, password_hash($password, PASSWORD_DEFAULT)); // Utilisation de password_hash pour sécuriser le mot de passe
+    // Appeler la fonction signup pour enregistrer l'utilisateur dans la base de données
+    signup($first_name, $last_name, $address, $email, $password);
 
-    header("Location: confirmation.php");
+    // Rediriger vers la page d'accueil après l'inscription réussie
+    header("Location: index.php");
     exit();
 } else {
     echo "Méthode invalide pour accéder à cette page.";
