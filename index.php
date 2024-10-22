@@ -31,5 +31,7 @@ if (isset($_SESSION['first_name'])) {
         </form>
     <?php endif; ?>
 
+    <a href="./dashboard.php">Dashboard</a>
+
 </body>
 </html>

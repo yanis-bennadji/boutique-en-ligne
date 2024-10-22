@@ -1,5 +1,9 @@
 <?php
-session_start(); // Démarrer la session
+// Vérification si la session n'est pas déjà démarrée pour éviter des erreurs
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); // Démarrer la session si elle n'est pas déjà démarrée
+}
+
 include 'includes/functions.php';
 
 // Définir le type de réponse en JSON
@@ -13,8 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = login($email, $password);
 
     if ($user) {
-        // Connexion réussie, stocker le prénom de l'utilisateur dans la session
+        // Connexion réussie, régénérer l'ID de session pour la sécurité
+        session_regenerate_id(true); 
+        
+        // Stocker le prénom et l'ID de l'utilisateur dans la session
         $_SESSION['first_name'] = $user['first_name'];
+        $_SESSION['user_id'] = $user['id']; // Stocker également l'ID utilisateur
 
         // Retourner une réponse JSON avec succès
         echo json_encode(['success' => true]);
@@ -30,3 +38,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 ?>
+    
