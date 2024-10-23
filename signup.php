@@ -1,11 +1,11 @@
 <!-- fill -->
-<?php
+<?php 
 // auth.php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
+    $prenom = $_POST['prenom'];     
 
     // This is where you'd handle signup/signin logic:
     // E.g., check if the user exists, create a new account, validate credentials, etc.
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Sign In logic for user: $email";
         // Authenticate user credentials here
     }
-}
+}  
 ?>
 
 <!DOCTYPE html>

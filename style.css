@@ -31,7 +31,7 @@
 .form-box h1 {
     font-size: 30px;
     margin-bottom: 60px;
-    color: #3c00a0;
+    color: rgb(247, 66, 0);
     position: relative;
 }
 
@@ -40,7 +40,7 @@
     width: 100px;
     height: 4px;
     border-radius: 3px;
-    background: #3c00a0;
+    background: rgb(247, 66, 0);
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -92,7 +92,7 @@ form p a {
 
 .btn-field button {
     flex-basis: 48%;
-    background: #3c00a0;
+    background: rgb(247, 66, 0);
     color: #fff;
     height: 40px;
     border-radius: 20px;
