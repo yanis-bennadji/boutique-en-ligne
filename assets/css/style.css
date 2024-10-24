@@ -4,13 +4,6 @@ body {
     margin: 0;
 }
 
-header {
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
 
 .logo {
     width: 50px;
@@ -157,8 +150,142 @@ main {
     text-decoration: underline;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
+
+/* Custom styles for the header */
+.bg-orange {
+    background-color: #FF7345;
+}
+
+.navbar-brand img.logo {
+    width: 100px; /* Ajuste la taille du logo selon tes besoins */
+}
+
+.search-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-form input {
+    border-radius: 20px;
+}
+
+.search-form button {
+    background-color:rgb(#000000);
+    border: none;
+    color: rgb(255, 255, 255);
+}
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: rgb(255, 255, 255);
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #000000;
+}
+
+/* Panier icon */
+.nav-item .fa-shopping-cart {
+    font-size: 1.5em;
+    color: white;
+}
+
+.nav-item .fa-shopping-cart:hover {
+    color: #ffc107;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        max-height: 250px; /* Limite la hauteur du menu */
+        overflow-y: auto;  /* Active le scroll si le menu dépasse */
+    }
+    
+    .navbar-toggler {
+        border-color: white;
+    }
+
+    /* Collapse button icon style */
+    .navbar-toggler-icon {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png");
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        color: white;
+        text-align: center;
+    }
+
+    .search-form {
+        margin: 10px 0; /* Ajustement de la position de la barre de recherche sur mobile */
+    }
+}
+
+                                        /* fin de la section header  */
+
+                                        /* début sectiion footer  */
+
+.footer {
+  background-color: #FF7345; /* Orange background */
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
 }
