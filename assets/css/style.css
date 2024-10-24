@@ -1,9 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background-color: #ffe6b2;
     margin: 0;
 }
 
+h1, h2 {
+    color: #ff7345;
+}
 
 .logo {
     width: 50px;
@@ -50,7 +53,7 @@ main {
 }
 
 .card {
-    background-color: #6cd6a4;
+    background-color: #f9bb8e;
     padding: 20px;
     border-radius: 20px;
     height: 400px;
@@ -93,16 +96,16 @@ main {
 }
 
 .card-image-dvd {
-    width: 200px;
-    height: 250px; /* Taille de l'image */
+    width: 150px;
+    height: 225px; /* Taille de l'image */
     object-fit: cover; /* Pour que l'image s'adapte bien */
     border-radius: 10px; /* Arrondir les bords de l'image */
     margin-bottom: 15px;
 }
 
 .card-image-figure {
-    width: 250px;
-    height: 250px; /* Taille de l'image */
+    width: 200px;
+    height: 225px; /* Taille de l'image */
     object-fit: cover; /* Pour que l'image s'adapte bien */
     border-radius: 10px; /* Arrondir les bords de l'image */
     margin-bottom: 15px;
@@ -115,12 +118,12 @@ main {
 
 .card .price {
     font-size: 16px;
-    color: #ff0000;
+    color: #cf671c;
     margin: 10px 0;
 }
 
 .buy-button {
-    background-color: #ff0000;
+    background-color: #ff7345;
     color: white;
     padding: 10px;
     border-radius: 20px;
@@ -130,7 +133,7 @@ main {
 }
 
 .buy-button:hover {
-    background-color: #ff69b4;
+    background-color: #fa531b;
 }
 
 .card:hover {
@@ -142,12 +145,12 @@ main {
     display: block;
     margin-top: 50px;
     font-size: 24px;
-    color: #333;
+    color: #fa531b;
     text-decoration: none;
 }
 
 .more-articles:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
