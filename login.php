@@ -9,6 +9,9 @@
 </head>
 <body>
 
+    <?php include './includes/header.php';
+ ?>
+
     <h1>Connexion</h1>
 
     <form id="login-form" onsubmit="handleLogin(event)">

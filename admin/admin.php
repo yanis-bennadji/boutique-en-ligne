@@ -1,6 +1,7 @@
 <?php
 // Inclure la connexion à la base de données
 include '../includes/db.php'; // Assurez-vous que 'db.php' configure correctement la connexion PDO
+include '../includes/header.php';
 
 // Gestion de l'ajout d'une nouvelle catégorie
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_category'])) {

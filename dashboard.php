@@ -1,5 +1,6 @@
 <?php
-session_start(); // Démarrer la session
+    include './includes/header.php';
+
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
@@ -62,8 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="address">Adresse :</label>
         <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($user['address'], ENT_QUOTES); ?>" required><br><br>
 
-        <label for="phone">Téléphone :</label>
-        <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($user['phone'], ENT_QUOTES); ?>"><br><br>
 
         <input type="submit" value="Mettre à jour">
     </form>
