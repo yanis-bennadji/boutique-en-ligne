@@ -292,3 +292,76 @@ main {
   width: 24px;
   height: 24px;
 }
+
+
+/* Spécifique à la page view_product.php */
+
+/* Section produit */
+.product-section {
+    text-align: center;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.product-info {
+    margin-bottom: 50px;
+}
+
+.product-image {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+.buy-button {
+    background-color: #ff7345;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #fa531b;
+}
+
+.product-quantity {
+    width: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+/* Section produits similaires */
+.suggested-products {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f9bb8e;
+    padding: 20px;
+    border-radius: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
