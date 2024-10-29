@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
+
     <?php 
-        include('./includes/head.php');
-        include('./includes/header.php');
-        include('./includes/main.php');
-        include('./includes/footer.php');
-    ?>
-    </html>
+    include('./includes/head.php'); 
+    include('./includes/header.php'); 
+    include('./includes/main.php'); 
+    include('./includes/footer.php'); ?>
+
+
+</html>
