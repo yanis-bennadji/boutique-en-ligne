@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- fill -->
-</body>
-</html>
+<?php
+// voir_produit.php
+
+// Connexion à la base de données (à adapter selon votre configuration)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "boutique-en-ligne";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connexion échouée : " . $conn->connect_error);
+}
