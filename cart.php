@@ -1,6 +1,8 @@
 <?php
-print_r($_POST);
-include './includes/header.php';
+session_start();
+include('./includes/head.php'); 
+include('./includes/header.php'); 
+include('./includes/db.php'); // Inclure la connexion à la base de données
 
 // Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
@@ -44,6 +46,11 @@ if (isset($_GET['remove'])) {
 if (isset($_GET['clear'])) {
     unset($_SESSION['cart']);
 }
+
+// Calcul du total du panier
+$total = array_reduce($_SESSION['cart'], function ($carry, $product) {
+    return $carry + ($product['price'] * $product['quantity']);
+}, 0);
 ?>
 
 <!DOCTYPE html>
@@ -52,72 +59,41 @@ if (isset($_GET['clear'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon panier</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        button {
-            padding: 8px 16px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
-
-<h1>Mon panier</h1>
-
-<?php if (!empty($_SESSION['cart'])): ?>
-    <table>
-        <thead>
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Total</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
+<div class="cart-container">
+    <div class="cart-items">
+        <?php if (!empty($_SESSION['cart'])): ?>
             <?php foreach ($_SESSION['cart'] as $product_id => $product): ?>
-                <tr>
-                    <td><?= htmlspecialchars($product['name'] ?? 'Nom inconnu'); ?></td>
-                    <td><?= number_format($product['price'] ?? 0, 2); ?> €</td>
-                    <td><?= $product['quantity'] ?? 1; ?></td>
-                    <td><?= number_format(($product['price'] ?? 0) * ($product['quantity'] ?? 1), 2); ?> €</td>
-                    <td>
-                        <a href="cart.php?remove=<?= $product_id; ?>"><button>Retirer</button></a>
-                    </td>
-                </tr>
+                <div class="cart-item">
+                    <img src="path/to/product-image.jpg" alt="Image du produit" class="product-image">
+                    <div class="product-details">
+                        <p class="product-name"><?= htmlspecialchars($product['name'] ?? 'Nom inconnu'); ?></p>
+                        <span class="product-status"><?= $product['quantity'] > 0 ? 'En stock' : 'Épuisé'; ?></span>
+                        <div class="quantity-selector">
+                            <select name="quantity">
+                                <?php for ($i = 1; $i <= 10; $i++) : ?>
+                                    <option value="<?= $i; ?>" <?= $i == $product['quantity'] ? 'selected' : ''; ?>><?= $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                        <span class="product-price"><?= number_format($product['price'], 2, ',', ''); ?>€</span>
+                        <a href="cart.php?remove=<?= $product_id; ?>" class="delete-button">Supprimer</a>
+                    </div>
+                </div>
             <?php endforeach; ?>
-        </tbody>
-    </table>
+        <?php else: ?>
+            <p>Votre panier est vide.</p>
+        <?php endif; ?>
+    </div>
 
-    <p><strong>Total du panier : 
-        <?php
-        $total = 0;
-        foreach ($_SESSION['cart'] as $product) {
-            $total += ($product['price'] ?? 0) * ($product['quantity'] ?? 1);
-        }
-        echo number_format($total, 2) . ' €';
-        ?>
-    </strong></p>
+    <div class="cart-summary">
+        <h2>Total du panier : <span class="total-price"><?= number_format($total, 2, ',', ''); ?>€</span></h2>
+        <a href="cart.php?clear=true"><button class="clear-button">Vider le panier</button></a>
+    </div>
+</div>
 
-    <a href="cart.php?clear=true"><button>Vider le panier</button></a>
-<?php else: ?>
-    <p>Votre panier est vide.</p>
-<?php endif; ?>
+<?php include('./includes/footer.php'); ?>
 
 </body>
 </html>
