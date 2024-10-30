@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-include('config/db.php');
+include('includes/db.php');
 
 // Vérifier si un ID de produit est passé dans l'URL
 if (isset($_GET['id'])) {

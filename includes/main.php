@@ -16,7 +16,7 @@
             </div>
 
             <div class="card">
-                <a href="view_product.php"><img src="./assets/img/figurinenaruto.png" alt="Figurine de Naruto" class="card-image-figure"></a>
+                <a href="./view_product.php"><img src="./assets/img/figurinenaruto.png" alt="Figurine de Naruto" class="card-image-figure"></a>
                 <h2>Figurine Naruto</h2>
                 <p class="price">14.99€</p>
                 <a href="#" class="buy-button">Buy</a>

@@ -65,49 +65,34 @@ main {
 
 .card img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card img:hover {
+}
+
+.card img:hover {
     transform: scale(1.1); /* Augmente l'image de 10% au survol */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Augmente l'ombre pour un effet plus marqué */
-  }
-  
+}
 
 .card-image {
     width: 50%;
-    height: 150px; /* Taille de l'image */
-    object-fit: cover; /* Pour que l'image s'adapte bien */
-    border-radius: 10px; /* Arrondir les bords de l'image */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-image:hover {
-    transform: scale(1.05); /* Légère augmentation de la taille */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajoute une ombre subtile */
-  }
-
-.card-image-book {
-    width: 150px;
-    height: 225px; /* Taille de l'image */
-    object-fit: cover; /* Pour que l'image s'adapte bien */
-    border-radius: 10px; /* Arrondir les bords de l'image */
-    margin-bottom: 15px;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.card-image-dvd {
-    width: 150px;
-    height: 225px; /* Taille de l'image */
-    object-fit: cover; /* Pour que l'image s'adapte bien */
-    border-radius: 10px; /* Arrondir les bords de l'image */
-    margin-bottom: 15px;
-}
-
+.card-image-book,
+.card-image-dvd,
 .card-image-figure {
-    width: 200px;
-    height: 225px; /* Taille de l'image */
-    object-fit: cover; /* Pour que l'image s'adapte bien */
-    border-radius: 10px; /* Arrondir les bords de l'image */
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
@@ -137,8 +122,8 @@ main {
 }
 
 .card:hover {
-    transform: scale(1.05); /* Légère animation au survol */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Plus d'ombre au survol */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .more-articles {
@@ -153,14 +138,13 @@ main {
     text-decoration: none;
 }
 
-
 /* Custom styles for the header */
 .bg-orange {
     background-color: #FF7345;
 }
 
 .navbar-brand img.logo {
-    width: 100px; /* Ajuste la taille du logo selon tes besoins */
+    width: 100px;
 }
 
 .search-form {
@@ -173,16 +157,17 @@ main {
 }
 
 .search-form button {
-    background-color:rgb(#000000);
+    background-color: #000000;
     border: none;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
 }
+
 .navbar-collapse {
     flex-grow: 0;
 }
 
 .navbar-nav .nav-item .nav-link {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     margin-right: 15px;
 }
 
@@ -203,15 +188,14 @@ main {
 /* Mobile specific styles */
 @media (max-width: 768px) {
     .navbar-collapse {
-        max-height: 250px; /* Limite la hauteur du menu */
-        overflow-y: auto;  /* Active le scroll si le menu dépasse */
+        max-height: 250px;
+        overflow-y: auto;
     }
     
     .navbar-toggler {
         border-color: white;
     }
 
-    /* Collapse button icon style */
     .navbar-toggler-icon {
         background-image: url("https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png");
     }
@@ -222,81 +206,75 @@ main {
     }
 
     .search-form {
-        margin: 10px 0; /* Ajustement de la position de la barre de recherche sur mobile */
+        margin: 10px 0;
     }
 }
 
-                                        /* fin de la section header  */
-
-                                        /* début sectiion footer  */
-
+/* Footer */
 .footer {
-  background-color: #FF7345; /* Orange background */
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    background-color: #FF7345;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-column {
-  flex: 1;
-  min-width: 200px;
-  padding: 10px;
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
 }
 
 .footer-column h3 {
-  font-size: 18px;
-  color: white;
-  margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
 }
 
 .footer-column ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 .footer-column ul li {
-  margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .footer-column ul li a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .footer-column ul li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .social-icons {
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 .social-icons a {
-  margin-right: 15px;
+    margin-right: 15px;
 }
 
 .social-icons img {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
 
-
-/* Spécifique à la page view_product.php */
-
-/* Section produit */
+/* Product Page */
 .product-section {
     text-align: center;
     margin: 40px auto;
@@ -317,20 +295,6 @@ main {
     margin: 20px 0;
 }
 
-.buy-button {
-    background-color: #ff7345;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.buy-button:hover {
-    background-color: #fa531b;
-}
-
 .product-quantity {
     width: 50px;
     padding: 5px;
@@ -339,7 +303,7 @@ main {
     margin-left: 10px;
 }
 
-/* Section produits similaires */
+/* Suggested Products */
 .suggested-products {
     text-align: center;
     margin-top: 50px;
@@ -349,16 +313,6 @@ main {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-}
-
-.card {
-    background-color: #f9bb8e;
-    padding: 20px;
-    border-radius: 20px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h3 {
