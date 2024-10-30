@@ -1,10 +1,13 @@
 <?php
 
-include './includes/header.php'; // Inclure le header dynamique
+include 'includes/header.php'; // Inclure le header dynamique
 include 'includes/db.php'; // Inclure la connexion à la base de données
 
+// Vérifier si l'utilisateur est connecté
+$isConnected = isset($_SESSION['user_id']);
+
 // Requête pour récupérer tous les produits depuis la base de données
-$stmt = $conn->query("SELECT id, name, description, price FROM products");
+$stmt = $conn->query("SELECT product_id, product_name, description, product_price FROM products");
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -55,17 +58,20 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="product-container">
     <?php foreach ($products as $product): ?>
         <div class="product-card">
-            <h3><?= htmlspecialchars($product['name']); ?></h3>
+            <h3><?= htmlspecialchars($product['product_name']); ?></h3>
             <p><?= htmlspecialchars($product['description']); ?></p>
-            <p><strong><?= number_format($product['price'], 2); ?> €</strong></p>
+            <p><strong><?= number_format($product['product_price'], 2); ?> €</strong></p>
 
-            <!-- Formulaire pour ajouter le produit au panier -->
-            <form action="cart.php" method="POST">
-                <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
-                <input type="hidden" name="product_name" value="<?= htmlspecialchars($product['name']); ?>">
-                <input type="hidden" name="product_price" value="<?= $product['price']; ?>">
-                <button type="submit" name="add_to_cart">Ajouter au panier</button>
-            </form>
+            <?php if ($isConnected): ?>
+                <!-- Formulaire pour ajouter le produit au panier -->
+                <form action="cart.php" method="POST">
+                    <input type="hidden" name="product_id" value="<?= $product['product_id']; ?>">
+                    <button type="submit" name="add_to_cart">Ajouter au panier</button>
+                </form>
+            <?php else: ?>
+                <!-- Si l'utilisateur n'est pas connecté, on redirige vers la page de connexion -->
+                <p><a href="login.php">Connectez-vous pour ajouter au panier</a></p>
+            <?php endif; ?>
         </div>
     <?php endforeach; ?>
 </div>

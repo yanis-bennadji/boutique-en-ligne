@@ -1,6 +1,13 @@
 <?php
-
+print_r($_POST);
 include './includes/header.php';
+
+// Vérifie si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
 // Initialiser le panier si ce n'est pas déjà fait
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -9,15 +16,13 @@ if (!isset($_SESSION['cart'])) {
 // Ajouter un produit au panier
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $product_id = $_POST['product_id'];
-    $product_name = $_POST['product_name'];
-    $product_price = $_POST['product_price'];
+    $product_name = $_POST['product_name'] ?? 'Nom inconnu';
+    $product_price = $_POST['product_price'] ?? 0;
 
     // Vérifier si le produit existe déjà dans le panier
     if (isset($_SESSION['cart'][$product_id])) {
-        // Si le produit est déjà dans le panier, augmenter la quantité
         $_SESSION['cart'][$product_id]['quantity']++;
     } else {
-        // Sinon, ajouter le produit au panier
         $_SESSION['cart'][$product_id] = [
             'name' => $product_name,
             'price' => $product_price,
@@ -25,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
         ];
     }
 
-    // Redirection vers la page du panier pour voir le contenu
     header("Location: cart.php");
     exit();
 }
@@ -88,10 +92,10 @@ if (isset($_GET['clear'])) {
         <tbody>
             <?php foreach ($_SESSION['cart'] as $product_id => $product): ?>
                 <tr>
-                    <td><?= htmlspecialchars($product['name']); ?></td>
-                    <td><?= number_format($product['price'], 2); ?> €</td>
-                    <td><?= $product['quantity']; ?></td>
-                    <td><?= number_format($product['price'] * $product['quantity'], 2); ?> €</td>
+                    <td><?= htmlspecialchars($product['name'] ?? 'Nom inconnu'); ?></td>
+                    <td><?= number_format($product['price'] ?? 0, 2); ?> €</td>
+                    <td><?= $product['quantity'] ?? 1; ?></td>
+                    <td><?= number_format(($product['price'] ?? 0) * ($product['quantity'] ?? 1), 2); ?> €</td>
                     <td>
                         <a href="cart.php?remove=<?= $product_id; ?>"><button>Retirer</button></a>
                     </td>
@@ -104,7 +108,7 @@ if (isset($_GET['clear'])) {
         <?php
         $total = 0;
         foreach ($_SESSION['cart'] as $product) {
-            $total += $product['price'] * $product['quantity'];
+            $total += ($product['price'] ?? 0) * ($product['quantity'] ?? 1);
         }
         echo number_format($total, 2) . ' €';
         ?>
